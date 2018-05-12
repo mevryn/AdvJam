@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,14 +34,14 @@ public class CharacterBehaviour : MonoBehaviour
     void Animation()
     {
         //warunek na animacje
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow))
         {
             //Przekazywanie do animatora czy ma animowac czy nie
             animationController.SetBool("Movement", true);
             //obracanie lewo, prawo
             Apperance.flipX = true;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow))
         {
             animationController.SetBool("Movement", true);
             Apperance.flipX = false;
