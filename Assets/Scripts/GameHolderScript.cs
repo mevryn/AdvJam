@@ -6,7 +6,7 @@ public class GameHolderScript : MonoBehaviour
 {
 
     public GameObject player;
-    void Awake()
+    void Start()
     {
         //tworzenie Obiektu Postaci przy starcie gry
         Instantiate(player, new Vector3(0, (float)-2.3, 0), Quaternion.identity);
