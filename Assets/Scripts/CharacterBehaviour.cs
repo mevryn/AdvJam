@@ -19,7 +19,7 @@ public class CharacterBehaviour : MonoBehaviour
 
         //Użycie zmiennej moveHorizontal aby utworzyć nowy vector2 movement 
         Vector2 movement = new Vector2(moveHorizontal, 0);
-
+        if (canMove()) ;
         //Nadanie szybkości ciału naszego Bohatera
         rb2d.velocity = movement * speed;
     }
@@ -58,5 +58,13 @@ public class CharacterBehaviour : MonoBehaviour
     {
         Animation();
         Movement();
+    }
+    bool canMove()
+    {
+        if (GameHolderScript.instance.getCurrentSceneName() == "hibernation")
+        {
+
+        }
+        return true;
     }
 }
