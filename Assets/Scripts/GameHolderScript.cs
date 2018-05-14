@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameHolderScript : MonoBehaviour
 {
     public static GameHolderScript instance = null;

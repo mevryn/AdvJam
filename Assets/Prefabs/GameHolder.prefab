@@ -23,7 +23,7 @@ GameObject:
   m_Layer: 0
   m_Name: GameHolder
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae59d6395be060a4db7f6fd8164056a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawningPoint: []
   backgroundList:
   - {fileID: 1517239926938694, guid: 337d5124b7fb91746bee598a19ced170, type: 2}
   player: {fileID: 1882280368251858, guid: 78e281bccca7da04fbea72bcb4ec7d00, type: 2}
