@@ -8,7 +8,15 @@ public class CameraScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (playerPosition.x < -3.8f)
+        {
+            transform.position = new Vector3(-3.8f, playerPosition.y + 1.8f, -10.0f);
+        } 
+        else if (playerPosition.x > 3.8f) {
+            transform.position = new Vector3(3.8f, playerPosition.y + 1.8f, -10.0f);
+        }
+            
     }
 
     // Update is called once per frame
@@ -24,10 +32,10 @@ public class CameraScript : MonoBehaviour
         switch (currentSceneName)
         {
             case "passage":
-                preventCameraMovement(1.2f);
+                preventCameraMovement(3.8f);
                 break;
             case "hibernation":
-                preventCameraMovement(0f);
+                preventCameraMovement(2.5f);
                 break;
         }
        
@@ -41,10 +49,13 @@ public class CameraScript : MonoBehaviour
             Debug.Log("true"+playerPosition.x);
             transform.position = new Vector3(playerPosition.x, playerPosition.y + 1.8f, -10.0f);
         }
-        else
+        else if (playerPosition.x < frame)
         {
-            Debug.Log("false"+playerPosition.x);
-            transform.position = transform.position;
+            transform.position = new Vector3(-frame, playerPosition.y + 1.8f, -10.0f);
+        }
+        else if (playerPosition.x > frame)
+        {
+            transform.position = new Vector3(frame, playerPosition.y + 1.8f, -10.0f);
         }
     }
 }
