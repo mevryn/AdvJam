@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 public class GameHolderScript : MonoBehaviour
 {
     public static GameHolderScript instance = null;
-    private List <Vector3> spawningPoint = new List<Vector3>();
+    public List<Vector3> spawningPoint = new List<Vector3>();
     private List<string> sceneList = new List<string>();
     public List<GameObject> backgroundList = new List<GameObject>();
     public GameObject player;
     public GameObject thisPlayer;
     private string currentSceneName;
-
+    protected float cameraSize =(float)4.2187;
     public string getCurrentSceneName()
     {
         return currentSceneName;
@@ -29,28 +29,41 @@ public class GameHolderScript : MonoBehaviour
         //Ustawia aby ten obiekt nie byl niszczony przy ladowaniu nowej sceny
         DontDestroyOnLoad(gameObject);
         sceneList.Add("hibernation");
-        spawningPoint.Add(new Vector3(0, (float)-1.8, -1));
+        spawningPoint.Add(new Vector3((float)0.1, (float)-1.8, -1));
         loadLevel(sceneList[0]);
         //tworzenie Obiektu Postaci przy starcie gry
     }
-     void Start()
+    void Start()
     {
         InitGame();
     }
-    void loadLevel(string level)
+    public void loadLevel(string level)
     {
         SceneManager.LoadScene(level, LoadSceneMode.Single);
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
+        Debug.Log("Trigger");
     }
     void InitGame()
     {
-        Camera.main.orthographicSize = (float)4.125;
+        Camera.main.orthographicSize = (float)4.21875;
         thisPlayer = (GameObject)Instantiate(player, spawningPoint[0], Quaternion.identity);
-        Instantiate(backgroundList[0]);
-        
+
     }
+    public bool checkingRange(Vector3 pos1,Vector3 pos2,float range)
+    {
+        print(pos1.x + " " + pos2.x + " " + range);
+        if (pos1.x - pos2.x < range)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
     void Update()
     {
+        Debug.Log(Screen.width + " " + Screen.height);
+
     }
 }

@@ -11,7 +11,12 @@ public class CharacterBehaviour : MonoBehaviour
     public Rigidbody2D rb2d;
 
     private Animator animationController;
+    private double range = 1.25;
 
+    public double getRange()
+    {
+        return range;
+    }
     void Movement()
     {
         //Przechowywanie tymczazowego x'owego wejscia w zmiennej moveHorizontal typu float
@@ -30,11 +35,16 @@ public class CharacterBehaviour : MonoBehaviour
         animationController = GetComponent<Animator>();
         //Nadanie wygladu poczatkowego naszej postaci
         Apperance.sprite = animationArray[0];
+        DontDestroyOnLoad(this);
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
     }
     void Animation()
     {
         //warunek na animacje
-        if (Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow))
+        if ((Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow) ))
         {
             //Przekazywanie do animatora czy ma animowac czy nie
             animationController.SetBool("Movement", true);
