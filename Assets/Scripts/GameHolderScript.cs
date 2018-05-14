@@ -48,7 +48,6 @@ public class GameHolderScript : MonoBehaviour
     {
         Camera.main.orthographicSize = (float)4.21875;
         thisPlayer = (GameObject)Instantiate(player, spawningPoint[0], Quaternion.identity);
-
     }
     public bool checkingRange(Vector3 pos1,Vector3 pos2,float range)
     {

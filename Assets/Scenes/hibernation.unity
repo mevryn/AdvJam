@@ -167,7 +167,6 @@ GameObject:
   - component: {fileID: 472316287}
   - component: {fileID: 472316286}
   - component: {fileID: 472316290}
-  - component: {fileID: 472316291}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -209,7 +208,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.21875
+  orthographic size: 4.1730084
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -246,22 +245,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 472316285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38aa3720cc3d6844b845751f68d161f, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb1930b0bf73a049bc6fc56a0efb4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
---- !u!114 &472316291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 472316285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38aa3720cc3d6844b845751f68d161f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &559680893
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,3 +423,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e0f5360731f2440b0b9a96ead9fa68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &984379333 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1517239926938694, guid: 337d5124b7fb91746bee598a19ced170,
+    type: 2}
+  m_PrefabInternal: {fileID: 327816608}
+--- !u!114 &984379334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984379333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0420ff0c358f39144905f47dee452acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &984379335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984379333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 8.4375, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
