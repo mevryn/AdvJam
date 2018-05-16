@@ -12,6 +12,7 @@ public class GameHolderScript : MonoBehaviour
     public GameObject player;
     public GameObject thisPlayer;
     private string currentSceneName;
+    private Canvas mainUI;
     protected float cameraSize =(float)5;
     public string getCurrentSceneName()
     {
@@ -36,7 +37,13 @@ public class GameHolderScript : MonoBehaviour
     }
     void Start()
     {
+        mainUI = FindObjectOfType<Canvas>();
         InitGame();
+    }
+    public void playerToFarAway()
+    {
+        Text dialog = mainUI.GetComponentInChildren<Text>();
+        dialog.text = "It's too far away";
     }
     public void loadLevel(string level)
     {
