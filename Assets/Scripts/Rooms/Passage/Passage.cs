@@ -11,7 +11,7 @@ public class Passage : MonoBehaviour {
     }
     void changePosition()
     {
-        character.transform.position = new Vector3(-9f,-1.8f,-1f);
+        character.transform.position = new Vector3(-9f,-2.04f,-1f);
     }
 	// Update is called once per frame
 	void Update () {
