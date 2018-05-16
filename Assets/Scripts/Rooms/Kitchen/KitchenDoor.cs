@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+public class KitchenDoor : MonoBehaviour {
     private GameObject character;
     void OnMouseDown()
     {
@@ -10,7 +10,7 @@ public class Door : MonoBehaviour {
         {
             print("clicked");
             GameHolderScript.instance.loadLevel("passage");
-            character.transform.position = new Vector3();
+            character.transform.position = new Vector3(-9f, -2.04f, -1f);
         }
         else
         {
