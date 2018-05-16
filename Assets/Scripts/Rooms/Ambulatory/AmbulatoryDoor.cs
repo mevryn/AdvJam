@@ -12,7 +12,7 @@ public class AmbulatoryDoor : MonoBehaviour {
             GameHolderScript.instance.loadLevel("passage2");
             character.transform.position = new Vector3(12f, -2.04f, -1f);
         } else
-        {
+        { 
             GameHolderScript.instance.playerToFarAway();
         }
     }

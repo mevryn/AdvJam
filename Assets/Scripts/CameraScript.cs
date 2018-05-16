@@ -34,11 +34,15 @@ public class CameraScript : MonoBehaviour
         switch (currentSceneName)
         {
             case "passage":
-                marginSize = 4.5f;
+                marginSize = 2.95f;
+                preventCameraMovement(marginSize);
+                break;
+            case "passage2":
+                marginSize = 2.97f;
                 preventCameraMovement(marginSize);
                 break;
             case "hibernation":
-                marginSize = 2.96f;
+                marginSize = 1.45f;
                 preventCameraMovement(marginSize);
                 break;
         }

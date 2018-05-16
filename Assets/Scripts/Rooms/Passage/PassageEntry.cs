@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Passage : MonoBehaviour {
+public class PassageEntry : MonoBehaviour {
     private GameObject character;
 	// Use this for initialization
 	void Start () {
