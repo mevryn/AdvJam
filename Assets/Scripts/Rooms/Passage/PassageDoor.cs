@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+public class PassageDoor : MonoBehaviour {
     private GameObject character;
     void OnMouseDown()
     {
         if(GameHolderScript.instance.checkingRange(transform.position,character.transform.position,(float)character.GetComponent<CharacterBehaviour>().getRange()))
         {
             print("clicked");
-            GameHolderScript.instance.loadLevel("passage");
-            character.transform.position = new Vector3();
+            GameHolderScript.instance.loadLevel("hibernation");
+            character.transform.position = new Vector3(10f, -2.04f, -1f);
         }
     }
 	// Use this for initialization

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test.unity
+    path: Assets/Scenes/Loader.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/hibernation.unity
@@ -14,4 +14,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/passage.unity
     guid: 3c56df6471512ec4cb5d20fd0fd4634f
+  - enabled: 1
+    path: Assets/Scenes/kitchen.unity
+    guid: 64b48ef0d601ec2469409bc612a99b35
+  - enabled: 1
+    path: Assets/Scenes/passage2.unity
+    guid: bfeab87ae813f0d4480b9f83009f25f0
+  - enabled: 1
+    path: Assets/Scenes/roomlocked.unity
+    guid: 8a97cebf1fa011b4eab1937f2255d6f4
+  - enabled: 1
+    path: Assets/Scenes/roomopened.unity
+    guid: dfa2757b1648962478034f31ba494a33
+  - enabled: 1
+    path: Assets/Scenes/sleepingrooms.unity
+    guid: 94d4298eef8a1784ca1734b35e336adc
+  - enabled: 1
+    path: Assets/Scenes/ambulatory.unity
+    guid: 1ea2dc88cc7dc454a84818b7616fd5ff
   m_configObjects: {}

@@ -7,7 +7,7 @@ public class Passage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         character = GameObject.FindGameObjectWithTag("Player");
-        changePosition();
+        //changePosition();
     }
     void changePosition()
     {
