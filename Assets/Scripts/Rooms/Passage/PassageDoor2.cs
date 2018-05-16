@@ -12,6 +12,10 @@ public class PassageDoor2 : MonoBehaviour {
             GameHolderScript.instance.loadLevel("kitchen");
             character.transform.position = new Vector3(-7.6f, -2.04f, -1f);
         }
+        else
+        {
+            GameHolderScript.instance.playerToFarAway();
+        }
     }
 	// Use this for initialization
 	void Start () {

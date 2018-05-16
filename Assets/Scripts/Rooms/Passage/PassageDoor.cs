@@ -12,6 +12,10 @@ public class PassageDoor : MonoBehaviour {
             GameHolderScript.instance.loadLevel("hibernation");
             character.transform.position = new Vector3(10f, -2.04f, -1f);
         }
+        else
+        {
+            GameHolderScript.instance.playerToFarAway();
+        }
     }
 	// Use this for initialization
 	void Start () {

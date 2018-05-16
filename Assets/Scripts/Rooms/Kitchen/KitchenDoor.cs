@@ -15,7 +15,6 @@ public class KitchenDoor : MonoBehaviour {
         else
         {
             GameHolderScript.instance.playerToFarAway();
-            StartCoroutine(deleteText());
         }
     }
 	// Use this for initialization
@@ -27,9 +26,4 @@ public class KitchenDoor : MonoBehaviour {
 	void Update () {
 		
 	}
-    IEnumerator deleteText()
-    {
-        yield return new WaitForSeconds(2f);
-        UI.instance.disableText();
-    }
 }

@@ -11,6 +11,9 @@ public class KitchenDoor1 : MonoBehaviour {
             print("clicked");
             GameHolderScript.instance.loadLevel("sleepingrooms");
             character.transform.position = new Vector3(-9f, -2.04f, -1f);
+        }else
+        {
+            GameHolderScript.instance.playerToFarAway();
         }
     }
 	// Use this for initialization

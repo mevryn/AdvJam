@@ -44,6 +44,12 @@ public class GameHolderScript : MonoBehaviour
     {
         Text dialog = mainUI.GetComponentInChildren<Text>();
         dialog.text = "It's too far away";
+        StartCoroutine(deleteDialog(dialog));
+    }
+    IEnumerator deleteDialog(Text dialog)
+    {
+        yield return new WaitForSeconds(2);
+        dialog.text = "";
     }
     public void loadLevel(string level)
     {
@@ -60,6 +66,12 @@ public class GameHolderScript : MonoBehaviour
     public bool checkingRange(Vector3 pos1,Vector3 pos2,float range)
     {
         print(pos1.x + " " + pos2.x + " " + range);
+        if (pos1.x < pos2.x)
+        {
+            float temp = pos1.x;
+            pos1.x = pos2.x;
+            pos2.x = temp;
+        }
         if (pos1.x - pos2.x < range)
         {
             return true;

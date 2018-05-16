@@ -12,6 +12,10 @@ public class Passage2Door1 : MonoBehaviour {
             GameHolderScript.instance.loadLevel("ambulatory");
             character.transform.position = new Vector3(-7.6f, -2.04f, -1f);
         }
+        else
+        {
+            GameHolderScript.instance.playerToFarAway();
+        }
     }
 	// Use this for initialization
 	void Start () {
