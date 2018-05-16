@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CameraScript : MonoBehaviour
 {
-   public Vector3 playerPosition;
+    public Vector3 playerPosition;
+    public float marginSize;
     // Use this for initialization
     void Start()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         if (playerPosition.x < -3.8f)
         {
-            transform.position = new Vector3(-3.8f, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(-marginSize, playerPosition.y + 1.8f, -10.0f);
         } 
         else if (playerPosition.x > 3.8f) {
-            transform.position = new Vector3(3.8f, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(marginSize, playerPosition.y + 1.8f, -10.0f);
         }
             
     }
@@ -27,17 +28,21 @@ public class CameraScript : MonoBehaviour
 
     void chooseSceneToPreventCamera()
     {
+
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
         switch (currentSceneName)
         {
             case "passage":
-                preventCameraMovement(3.8f);
+                marginSize = 4.5f;
+                preventCameraMovement(marginSize);
                 break;
             case "hibernation":
-                preventCameraMovement(2.5f);
+                marginSize = 2.96f;
+                preventCameraMovement(marginSize);
                 break;
         }
+    
        
     }
 
@@ -47,15 +52,15 @@ public class CameraScript : MonoBehaviour
         if (playerPosition.x > -frame & playerPosition.x < frame) 
         {
             Debug.Log("true"+playerPosition.x);
-            transform.position = new Vector3(playerPosition.x, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(playerPosition.x, playerPosition.y + 2.04f, -10.0f);
         }
         else if (playerPosition.x < frame)
         {
-            transform.position = new Vector3(-frame, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(-frame, playerPosition.y + 2.04f, -10.0f);
         }
         else if (playerPosition.x > frame)
         {
-            transform.position = new Vector3(frame, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(frame, playerPosition.y + 2.04f, -10.0f);
         }
     }
 }

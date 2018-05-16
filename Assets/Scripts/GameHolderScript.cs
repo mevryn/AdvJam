@@ -12,7 +12,7 @@ public class GameHolderScript : MonoBehaviour
     public GameObject player;
     public GameObject thisPlayer;
     private string currentSceneName;
-    protected float cameraSize =(float)4.2187;
+    protected float cameraSize =(float)5;
     public string getCurrentSceneName()
     {
         return currentSceneName;
@@ -30,7 +30,7 @@ public class GameHolderScript : MonoBehaviour
         //Ustawia aby ten obiekt nie byl niszczony przy ladowaniu nowej sceny
         DontDestroyOnLoad(gameObject);
         sceneList.Add("hibernation");
-        spawningPoint.Add(new Vector3((float)0.1, (float)-1.8, -1));
+        spawningPoint.Add(new Vector3((float)0.1, (float)-2.04, -1));
         loadLevel(sceneList[0]);
         //tworzenie Obiektu Postaci przy starcie gry
     }
@@ -47,7 +47,7 @@ public class GameHolderScript : MonoBehaviour
     }
     void InitGame()
     {
-        Camera.main.orthographicSize = (float)4.21875;
+        Camera.main.orthographicSize = (float)5;
         thisPlayer = (GameObject)Instantiate(player, spawningPoint[0], Quaternion.identity);
     }
     public bool checkingRange(Vector3 pos1,Vector3 pos2,float range)
