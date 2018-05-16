@@ -11,6 +11,9 @@ public class HibernationDoor : MonoBehaviour {
             print("clicked");
             GameHolderScript.instance.loadLevel("passage");
             character.transform.position = new Vector3(-9f, -2.04f, -1f);
+        }else
+        {
+            GameHolderScript.instance.playerToFarAway();
         }
     }
 	// Use this for initialization
