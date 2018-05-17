@@ -12,10 +12,10 @@ public class CameraScript : MonoBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         if (playerPosition.x < -3.8f)
         {
-            transform.position = new Vector3(-marginSize, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(-marginSize, playerPosition.y + 2.04f, -10.0f);
         } 
         else if (playerPosition.x > 3.8f) {
-            transform.position = new Vector3(marginSize, playerPosition.y + 1.8f, -10.0f);
+            transform.position = new Vector3(marginSize, playerPosition.y + 2.04f, -10.0f);
         }
             
     }
@@ -43,6 +43,26 @@ public class CameraScript : MonoBehaviour
                 break;
             case "hibernation":
                 marginSize = 2.96f;
+                preventCameraMovement(marginSize);
+                break;
+            case "kitchen":
+                marginSize = 0f;
+                preventCameraMovement(marginSize);
+                break;
+            case "sleepingrooms":
+                marginSize = 0f;
+                preventCameraMovement(marginSize);
+                break;
+            case "roomlocked":
+                marginSize = 0f;
+                preventCameraMovement(marginSize);
+                break;
+            case "roomopened":
+                marginSize = 0f;
+                preventCameraMovement(marginSize);
+                break;
+            case "ambulatory":
+                marginSize = 0f;
                 preventCameraMovement(marginSize);
                 break;
         }

@@ -10,7 +10,7 @@ public class KitchenDoor : MonoBehaviour {
         {
             print("clicked");
             GameHolderScript.instance.loadLevel("passage");
-            character.transform.position = new Vector3(-9f, -2.04f, -1f);
+            character.transform.position = new Vector3(-6.5f, -2.04f, -1f);
         }
         else
         {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Passage2Door2 : MonoBehaviour {
+public class SleepingRoomsDoor1 : MonoBehaviour {
     private GameObject character;
     void OnMouseDown()
     {

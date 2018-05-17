@@ -46,7 +46,13 @@ public class GameHolderScript : MonoBehaviour
         dialog.text = "It's too far away";
         StartCoroutine(deleteDialog(dialog));
     }
-    IEnumerator deleteDialog(Text dialog)
+    public void doorClosed()
+    {
+        Text dialog = mainUI.GetComponentInChildren<Text>();
+        dialog.text = "It's locked";
+        StartCoroutine(deleteDialog(dialog));
+    }
+        IEnumerator deleteDialog(Text dialog)
     {
         yield return new WaitForSeconds(2);
         dialog.text = "";

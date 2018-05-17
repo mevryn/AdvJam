@@ -11,7 +11,7 @@ public class CharacterBehaviour : MonoBehaviour
     public Rigidbody2D rb2d;
 
     private Animator animationController;
-    private double range = 1.25;
+    private double range = 2;
 
     public double getRange()
     {
