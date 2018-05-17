@@ -14,6 +14,7 @@ public class GameHolderScript : MonoBehaviour
     private string currentSceneName;
     private Canvas mainUI;
     protected float cameraSize =(float)5;
+    private GameObject dialogWindow;
     public string getCurrentSceneName()
     {
         return currentSceneName;
@@ -33,6 +34,8 @@ public class GameHolderScript : MonoBehaviour
         sceneList.Add("hibernation");
         spawningPoint.Add(new Vector3((float)0.1, (float)-2.04, -1));
         loadLevel(sceneList[0]);
+        dialogWindow = GameObject.Find("Dialog");
+        dialogWindow.SetActive(false);
         //tworzenie Obiektu Postaci przy starcie gry
     }
     void Start()
@@ -42,20 +45,24 @@ public class GameHolderScript : MonoBehaviour
     }
     public void playerToFarAway()
     {
-        Text dialog = mainUI.GetComponentInChildren<Text>();
+        dialogWindow.SetActive(true);
+        Text dialog = dialogWindow.GetComponentInChildren<Text>();
         dialog.text = "It's too far away";
         StartCoroutine(deleteDialog(dialog));
     }
     public void doorClosed()
     {
-        Text dialog = mainUI.GetComponentInChildren<Text>();
+        Text dialog = dialogWindow.GetComponentInChildren<Text>();
+        dialogWindow.SetActive(true);
         dialog.text = "It's locked";
         StartCoroutine(deleteDialog(dialog));
     }
         IEnumerator deleteDialog(Text dialog)
     {
         yield return new WaitForSeconds(2);
+        
         dialog.text = "";
+        dialogWindow.SetActive(false);
     }
     public void loadLevel(string level)
     {
@@ -68,6 +75,7 @@ public class GameHolderScript : MonoBehaviour
     {
         Camera.main.orthographicSize = (float)5;
         thisPlayer = (GameObject)Instantiate(player, spawningPoint[0], Quaternion.identity);
+        thisPlayer.name = "player";
     }
     public bool checkingRange(Vector3 pos1,Vector3 pos2,float range)
     {
@@ -89,6 +97,7 @@ public class GameHolderScript : MonoBehaviour
     void Update()
     {
         Debug.Log(Screen.width + " " + Screen.height);
-
+        if (Input.GetKey(KeyCode.Escape))
+            Application.Quit();
     }
 }

@@ -12,7 +12,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     private Animator animationController;
     private double range = 2;
-
+    private AudioSource walkSound;
     public double getRange()
     {
         return range;
@@ -21,7 +21,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         //Przechowywanie tymczazowego x'owego wejscia w zmiennej moveHorizontal typu float
         float moveHorizontal = Input.GetAxis("Horizontal");
-
+   
         //Użycie zmiennej moveHorizontal aby utworzyć nowy vector2 movement 
         Vector2 movement = new Vector2(moveHorizontal, 0);
         if (canMove()) ;
@@ -31,6 +31,7 @@ public class CharacterBehaviour : MonoBehaviour
     //Awake wykonuje sie przed funkcja Start() w Unity
     void Awake()
     {
+        walkSound = GetComponent<AudioSource>();
         //Przypisanie do obiektu animatora, animatora naszego obiektu postaci
         animationController = GetComponent<Animator>();
         //Nadanie wygladu poczatkowego naszej postaci
@@ -46,6 +47,8 @@ public class CharacterBehaviour : MonoBehaviour
         //warunek na animacje
         if ((Input.GetKey(KeyCode.A) | Input.GetKey(KeyCode.LeftArrow) ))
         {
+            if (!walkSound.isPlaying)
+                walkSound.Play();
             //Przekazywanie do animatora czy ma animowac czy nie
             animationController.SetBool("Movement", true);
             //obracanie lewo, prawo
@@ -53,12 +56,17 @@ public class CharacterBehaviour : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D) | Input.GetKey(KeyCode.RightArrow))
         {
+            if (!walkSound.isPlaying)
+                walkSound.Play();
             animationController.SetBool("Movement", true);
             Apperance.flipX = false;
         }
         else
         {
+            if (walkSound.isPlaying)
+                walkSound.Pause();
             animationController.SetBool("Movement", false);
+            rb2d.velocity = new Vector2(0,0);
         }
 
 
@@ -76,5 +84,9 @@ public class CharacterBehaviour : MonoBehaviour
 
         }
         return true;
+    }
+    void Update()
+    {
+        
     }
 }

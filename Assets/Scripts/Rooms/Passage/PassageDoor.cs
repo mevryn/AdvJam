@@ -10,7 +10,7 @@ public class PassageDoor : MonoBehaviour {
         {
             print("clicked");
             GameHolderScript.instance.loadLevel("hibernation");
-            character.transform.position = new Vector3(10f, -2.04f, -1f);
+            character.transform.position = new Vector3(12f, -2.04f, -1f);
         }
         else
         {
