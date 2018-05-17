@@ -14,6 +14,9 @@ public class GameHolderScript : MonoBehaviour
     private string currentSceneName;
     private Canvas mainUI;
     protected float cameraSize =(float)5;
+    protected Image dialogWindow;
+
+    public GameObject UIDialog;
     public string getCurrentSceneName()
     {
         return currentSceneName;
@@ -33,6 +36,9 @@ public class GameHolderScript : MonoBehaviour
         sceneList.Add("hibernation");
         spawningPoint.Add(new Vector3((float)0.1, (float)-2.04, -1));
         loadLevel(sceneList[0]);
+        UIDialog = GameObject.Find("Dialog");
+        UIDialog.SetActive(false);
+
         //tworzenie Obiektu Postaci przy starcie gry
     }
     void Start()
@@ -41,14 +47,16 @@ public class GameHolderScript : MonoBehaviour
         InitGame();
     }
     public void playerToFarAway()
-    {
-        Text dialog = mainUI.GetComponentInChildren<Text>();
+    {   
+        Text dialog = UIDialog.GetComponentInChildren<Text>();
+        UIDialog.SetActive(true);
         dialog.text = "It's too far away";
         StartCoroutine(deleteDialog(dialog));
     }
     IEnumerator deleteDialog(Text dialog)
     {
         yield return new WaitForSeconds(2);
+        UIDialog.SetActive(false);
         dialog.text = "";
     }
     public void loadLevel(string level)

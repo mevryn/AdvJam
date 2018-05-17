@@ -21,12 +21,13 @@ public class UI : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-         dialog = mainUI.GetComponentInChildren<Text>();
-        disableText();
+        GameObject dialog = GameObject.Find("Dialog");
+         Text dialogText = dialog.GetComponentInChildren<Text>();
+        disableText(dialogText);
 	}
-	public void disableText()
+	public void disableText(Text text)
     {
-        dialog.text = "";
+        text.text = "";
     }
 	// Update is called once per frame
 	void Update () {
